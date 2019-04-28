@@ -1,0 +1,11 @@
+{
+  "name": "fe_challenge_welington-silva",
+  "version": "1.0.0",
+  "description": "Farfetch frontend challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Welington Silva",
+  "license": "ISC"
+}
