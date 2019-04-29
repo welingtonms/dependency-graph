@@ -1,11 +1,10 @@
-const parser = require('./parser')
+const ast = require('./ast')
 
-parser
-  .parse('./test/code/c.js')
-  .then(({ data: lines = [] }) => {
-    console.log(lines)
-  })
-  .catch(({ error }) => {
-    console.error(error)
-    process.exit(0)
-  })
+const data = ast.build('index')
+
+console.log('*************** DEPENDENCY GRAPH ********* ')
+ast.traverse(data)
+console.log('*************** BUNDLED ********* ')
+ast.generateBundle(data)
+console.log('*************** EXECUTABLE ********* ')
+ast.generateExecutable(data)

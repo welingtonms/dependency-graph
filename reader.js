@@ -1,4 +1,3 @@
-const readline = require('readline')
 const fs = require('fs')
 
 /**
@@ -7,7 +6,7 @@ const fs = require('fs')
  * @param {string} filePath
  * @returns {Array} Lines read from the file, if it exists; null, otherwise.
  */
-const readFile = filePath =>
+/* const readFile = filePath =>
   new Promise((resolve, reject) => {
     if (!fs.existsSync(filePath)) {
       reject({
@@ -31,7 +30,20 @@ const readFile = filePath =>
           data: lines,
         })
       })
-  })
+  }) */
+
+const readFile = filePath => {
+  if (!fs.existsSync(filePath)) {
+    return []
+  }
+
+  const lines = fs
+    .readFileSync(filePath, 'utf-8')
+    .split('\n')
+    .filter(Boolean)
+
+  return lines
+}
 
 module.exports = {
   read: readFile,

@@ -12,3 +12,4 @@
 - [NodeJs Streams](https://medium.freecodecamp.org/node-js-streams-everything-you-need-to-know-c9141306be93)
 - [How to check if a file exists in Node.js](https://flaviocopes.com/how-to-check-if-file-exists-node/)
 - [JSDoc documentation](http://usejsdoc.org)
+- [Get content between parenthesis](https://stackoverflow.com/questions/6208367/regex-to-match-stuff-between-parentheses)
