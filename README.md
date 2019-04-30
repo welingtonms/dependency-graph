@@ -1,12 +1,35 @@
 # Farfetch Challenge Solution
 
+First, thank you for the opportunity.
+
 # Solution
 
-## Parser
+In order to load files, I consider the base path as the directory test/code/ (that's why the index file builds the AST from index.js, i.e., test/code/index.js).
+You can run the solution with `node index.js`.
 
-- For the puposes of this
+## Dependency graph
 
-## Consulting sources
+Once you run `node index.js` The dependency graph in printed on the screen, with the indentation level indicating the 'depends on' relation.
+That means:
+`index.js a.js`
+In this case, `index.js` depends on `a.js`.
+
+## Bundle
+
+As described in the exercise goal, the file `bundle.js` contains the source code of each file in the correct order
+of execution. That **does not** mean this will be executable, since it might contain some code violations (multiple declarations of the same constant, for example).
+
+## Executable bundle
+
+This bundle version takes into account the dependency in isolated functions, run when the required dependency is needed. Therefore, it shows the code structure necessary for the bundled code to be executable.
+
+You can check the executable bundle by running `node executable.js`
+
+# Dependencies
+
+The only dependency I added was Lodash, a usefull tool set with utility functions.
+
+# Consulting sources
 
 - [Reading a file line-by-line in NodeJs](https://usefulangle.com/post/95/nodejs-read-file-line-by-line)
 - [NodeJs Streams](https://medium.freecodecamp.org/node-js-streams-everything-you-need-to-know-c9141306be93)

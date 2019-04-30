@@ -1,14 +1,11 @@
-const c = (function() {
-  const a = (function() {
-    const a = 'This is module a'
-    return a
-  })()
-  const b = (function() {
-    const b = 'This is module b'
-    return b
-  })()
-  console.log(a, b)
-  const c = 'This is module c'
-  return c
-})()
+const a = 'This is module a'
+module.exports = a
+const b = 'This is module b'
+module.exports = b
+const a = require('./a')
+const b = require('./b')
+console.log(a, b)
+const c = 'This is module c'
+module.exports = c
+const c = require('./c')
 console.log(c)
