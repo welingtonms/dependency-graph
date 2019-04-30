@@ -27,7 +27,7 @@ You can check the executable bundle by running `node executable.js`
 
 # Dependencies
 
-The only dependency I added was Lodash, a usefull tool set with utility functions.
+I added Mocha ( a test runner) and Chai (a very useful assertion library).
 
 # Consulting sources
 

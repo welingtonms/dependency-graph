@@ -1,7 +1,7 @@
-const ast = require('./ast')
+const ast = require('./astUtils')
 const fileUtils = require('./fileUtils')
 
-// I take as
+// Base path is test/code
 const data = ast.build('index.js')
 
 console.log('*************** DEPENDENCY GRAPH ********* ')

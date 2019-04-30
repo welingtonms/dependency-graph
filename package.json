@@ -4,11 +4,12 @@
   "description": "Farfetch frontend challenge",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "mocha"
   },
   "author": "Welington Silva",
   "license": "ISC",
   "dependencies": {
-    "lodash": "^4.17.11"
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
   }
 }

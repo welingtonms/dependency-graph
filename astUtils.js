@@ -1,4 +1,3 @@
-const _ = require('lodash')
 const fileUtils = require('./fileUtils')
 
 const REQUIRE_REGEX = new RegExp(/require\((.*?)\)/)
@@ -9,7 +8,7 @@ const SINGLE_QUOTE_REGEX = new RegExp("'", 'gm')
  * @param {string} text text to be printed
  * @param {number} level level of indentation
  */
-const indent = (text, level) => `${_.repeat('    ', level)}${text}`
+const indent = (text, level) => `${'    '.repeat(level)}${text}`
 
 /**
  * Gets the full path to the file, inside the base folder (/test/code)
@@ -30,7 +29,7 @@ const createNode = (line = '') => {
   }
 
   const matches = line.match(REQUIRE_REGEX)
-  const isDependency = !_.isEmpty(matches)
+  const isDependency = matches !== null
 
   /**
    * If this is a 'require' line of code then we set its properties
@@ -126,7 +125,9 @@ const generateBundle = (node, content = []) => {
 const generateExecutable = (node, content = [], level = 0) => {
   node.children.forEach(child => {
     if (child.isDependency) {
-      const dependency = _.find(node.dependencies, { file: child.requires })
+      const dependency = (node.dependencies || []).find(dependency => {
+        return dependency.file === child.requires
+      })
 
       content.push(indent(`// ${child.value}`, level))
 
@@ -149,8 +150,6 @@ const generateExecutable = (node, content = [], level = 0) => {
 
   return content
 }
-
-console.log('AAA', indent('a', 5), 'BBB')
 
 module.exports = {
   build,
