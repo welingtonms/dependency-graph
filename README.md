@@ -1,6 +1,4 @@
-# Farfetch Challenge Solution
-
-First, thank you for the opportunity.
+Experimenting with how bundlers handle dependencies.
 
 # Solution
 
